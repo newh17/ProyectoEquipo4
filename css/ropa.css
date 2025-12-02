@@ -203,3 +203,143 @@ body{
     color:#8b8b8b;
     font-size:.9rem;
 }
+
+
+/* ==============================
+          TRANSICIONES
+   =============================== */
+
+/* Transiciones generales en tarjetas*/
+.caja,
+.imagenes-objetos img,
+.menu-navegacion li a,
+.titulo-seccion,
+.main-principal h1 {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        color .25s ease,
+        filter .25s ease;
+}
+
+/* NAVBAR – subrayado y leve glow al pasar el ratón */
+.menu-navegacion li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-navegacion li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #ffb36b);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    opacity: 0.8;
+}
+
+.menu-navegacion li a:hover::after {
+    transform: translateX(0);
+}
+
+.menu-navegacion li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 107, 53, .4);
+}
+
+/* La página activa (Ropa) un poco más marcada al pasar el ratón */
+.menu-navegacion li a.enlace:hover {
+    border-bottom-color: #ffb36b;
+}
+
+/* TITULOS – barra naranja que aparece al pasar el ratón */
+.titulo-seccion {
+    position: relative;
+    display: inline-block;
+    padding-bottom: .2rem;
+}
+
+.titulo-seccion::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #ffb36b);
+    transition: width .25s ease;
+}
+
+.titulo-seccion:hover::after {
+    width: 100%;
+}
+
+/* H1 principal – pequeño zoom y brillo suave */
+.main-principal h1:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
+    border-bottom-color: #ffb36b;
+}
+
+/* TARJETAS (.caja) – elevación y borde más “tocho” */
+.caja {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.caja:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .8);
+    border-color: #ff6b35;
+    background: radial-gradient(circle at top, #2f2117 0%, #262626 50%, #1b1b1b 100%);
+}
+
+/* Imágenes de objetos – efecto “loot” al pasar el ratón */
+.imagenes-objetos img {
+    cursor: pointer;
+}
+
+.imagenes-objetos img:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 0 12px rgba(255, 107, 53, .6);
+    border-color: #ffb36b;
+    filter: brightness(1.05);
+}
+
+/* Listas – texto se resalta un poco para que parezca seleccionable */
+.lista li {
+    transition: color .2s ease, transform .2s ease;
+}
+
+.lista li:hover {
+    color: #ffe1c2;
+    transform: translateX(3px);
+}
+
+/* Notas – ligero glow al pasar el ratón */
+.nota {
+    transition: color .2s ease, text-shadow .2s ease;
+}
+
+.nota:hover {
+    color: #ffd9a0;
+    text-shadow: 0 0 6px rgba(255, 140, 64, .6);
+}
+
+/* Footer – pequeño cambio de color al hacer hover sobre el texto */
+.pie p {
+    transition: color .2s ease, transform .2s ease;
+}
+
+.pie p:hover {
+    color: #ff6b35;
+    transform: translateY(-2px);
+}

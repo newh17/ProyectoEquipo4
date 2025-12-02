@@ -165,3 +165,57 @@ body{
     color:#8b8b8b;
     font-size:.9rem;
 }
+
+
+
+/* ==============================
+          TRANSICIONES
+   =============================== */
+
+/* Transiciones generales en tarjetas*/
+.caja,
+.imagenes-objetos img,
+.menu-navegacion li a,
+.titulo-seccion,
+.main-principal h1 {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        color .25s ease,
+        filter .25s ease;
+}
+
+/* NAVBAR – subrayado y leve glow al pasar el ratón */
+.menu-navegacion li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-navegacion li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #ffb36b);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    opacity: 0.8;
+}
+
+.menu-navegacion li a:hover::after {
+    transform: translateX(0);
+}
+
+.menu-navegacion li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 107, 53, .4);
+}
+
+/* La página activa un poco más marcada al pasar el ratón */
+.menu-navegacion li a.enlace:hover {
+    border-bottom-color: #ffb36b;
+}
