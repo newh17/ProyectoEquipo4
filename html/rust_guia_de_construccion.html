@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rust - Construcciones</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/construcciones.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <nav class="barra-navegacion">
+      <ul class="menu-navegacion">
+        <li><a href="index.html" class="enlace">Inicio</a></li>
+        <li><a href="html/armas.html" class="enlace">Armas</a></li>
+        <li><a href="html/ropa.html" class="enlace">Ropa</a></li>
+        <li><a href="html/materiales.html" class="enlace">Materiales</a></li>
+        <li><a href="html/construcciones.html" class="enlace">Construcciones</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Construcciones en Rust — Guía práctica</h1>
+          <p class="lead">Introducción a los inicios, mejoras de estructuras, niveles de construcción (Twig → Armored) y
+            buenas prácticas para sobrevivir y fortificar.</p>
+        </div>
+      </header>
+
+      <main>
+        <article>
+          <section id="inicio">
+            <h2>1. Inicios en la construcción</h2>
+            <p>Los primeros pasos en la construcción en Rust son fundamentales: elegir ubicación, levantar una base
+              mínima
+              y asegurarla con un <strong>Tool Cupboard</strong> (TC). Si construyes sin TC, la base será vulnerable a
+              que
+              otros la reclamen y al decay.</p>
+            <ul>
+              <li><strong>Localización:</strong> evita llanuras abiertas y busca cobertura (árboles, rocas) y rutas de
+                escape.</li>
+              <li><strong>Base inicial (2x2 o 1x2):</strong> es común empezar con una estructura pequeña y expandirla
+                luego. Construye un aire de seguridad con puertas internas y un vestíbulo.</li>
+              <li><strong>Tool Cupboard (TC):</strong> coloca el TC lo antes posible y añade recursos para evitar el
+                decay. Solo los jugadores autorizados pueden editar estructuras dentro de su radio.</li>
+              <li><strong>Materiales iniciales:</strong> Twig o Wood para la primera noche; prioriza madera para puertas
+                y
+                cajas de suministros.</li>
+            </ul>
+            <div class="tip">Tip: mientras pruebas, construye una puerta doble con un pequeño <em>airlock</em>
+              (vestíbulo)
+              para evitar raids simples con incendios o empujes.</div>
+          </section>
+
+          <section id="mejoras">
+            <h2>2. Mejoras de las estructuras</h2>
+            <p>Mejorar una estructura se hace normalmente con el <em>hammer</em>. Cada elemento (pared, puerta, rampa,
+              techo) puede ser "upgradado" a un material de mayor resistencia usando recursos específicos.</p>
+            <ul>
+              <li><strong>Proceso:</strong> equipa el martillo (hammer), haz clic derecho sobre la estructura y
+                selecciona
+                la actualización deseada si tienes los recursos.</li>
+              <li><strong>Prioriza:</strong> puertas y muros exteriores primero; suelos y techos luego.</li>
+              <li><strong>Reversión:</strong> upgrade es unidireccional (no se degrada automáticamente). Si destruyes un
+                elemento, puedes recuperar parte de los materiales con un <em>salvage</em> o reciclar.</li>
+            </ul>
+            <pre><code>// Ejemplo: pasos rápidos
+1. Equipa Hammer
+2. Acerca al muro
+3. Haz clic derecho → Upgrade → selecciona Wood/Stone/Metal
+4. El recurso se consume y el objeto cambia de aspecto y durabilidad
+</code></pre>
+          </section>
+
+          <section id="niveles">
+            <h2>3. Niveles de construcción (grades)</h2>
+            <p>Rust usa diferentes niveles o "grades" que determinan la durabilidad y coste. De menor a mayor
+              resistencia:
+            </p>
+            <table class="grade-table" aria-describedby="tabla-grades">
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Descripción</th>
+                  <th>Material principal (ejemplo)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="badge">Twig</td>
+                  <td>Material más débil; rápido de construir, bueno solo para early game o trampas.</td>
+                  <td>Madera ligera</td>
+                </tr>
+                <tr>
+                  <td class="badge">Wood</td>
+                  <td>Estándar para early-mid game; barato y razonablemente rápido.</td>
+                  <td>Madera</td>
+                </tr>
+                <tr>
+                  <td class="badge">Stone</td>
+                  <td>Balance entre coste y resistencia; comúnmente usado para la capa exterior.</td>
+                  <td>Piedra</td>
+                </tr>
+                <tr>
+                  <td class="badge">Sheet Metal</td>
+                  <td>Material fuerte; requiere metal fragments, mucho más resistente a explosivos.</td>
+                  <td>Metal Fragments</td>
+                </tr>
+                <tr>
+                  <td class="badge">Armored</td>
+                  <td>Tope de resistencia; extremadamente caro (metal frags + high quality metal) y normalmente
+                    reservado
+                    para compartimentos críticos.</td>
+                  <td>High Quality Metal + Metal Fragments</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Consejo: muchas bases usan una combinación — por ejemplo, <strong>stone</strong> en el exterior y
+              <strong>sheet metal</strong> en salas de loot.
+            </p>
+          </section>
+
+          <section id="estructura-estabilidad">
+            <h2>4. Estabilidad y diseño</h2>
+            <p>La estabilidad (structural stability) afecta qué puede sostener una pieza; evita eliminar soportes
+              críticos
+              o puedes colapsar tu propia base.</p>
+            <ul>
+              <li><strong>Triangulación:</strong> usar rampas y soportes para distribuir peso.</li>
+              <li><strong>Pisos y cimientos:</strong> edifica cimientos y no elimines el suelo base si otros elementos
+                dependen de él.</li>
+              <li><strong>Puertas y airlocks:</strong> protege el loot con doble puerta y cámaras intermedias.</li>
+            </ul>
+          </section>
+
+          <section id="defensas">
+            <h2>5. Defensa y mantenimiento</h2>
+            <p>Además de materiales, la defensa incluye trampas, barricadas y el mantenimiento del TC.</p>
+            <ul>
+              <li><strong>Upkeep (decay):</strong> mantener recursos en el TC para evitar que la base entre en decay.
+              </li>
+              <li><strong>Bloqueos y trampas:</strong> honeycombs, shoot floors y tech traps pueden retrasar a los
+                atacantes.</li>
+              <li><strong>Posicionamiento del TC:</strong> ubícalo en una sala interna y protegida, difícil de alcanzar
+                desde el exterior.</li>
+            </ul>
+          </section>
+
+          <section id="ejemplos">
+            <h2>6. Plantillas y rutas de progresión</h2>
+            <p>Un ejemplo simple de progresión típica:</p>
+            <ol>
+              <li>Construir 1x2 o 2x2 en <em>Twig</em> → colocar TC</li>
+              <li>Mejorar puertas y paredes externas a <em>Wood</em></li>
+              <li>Expandir con habitaciones y cajas; mejorar a <em>Stone</em> cuando haya recursos</li>
+              <li>Crear una sala fuerte interna y mejorar a <em>Sheet Metal</em>/ <em>Armored</em> según necesidad</li>
+            </ol>
+          </section>
+
+          <section id="recursos">
+            <h2>7. Recursos y costes (orientativo)</h2>
+            <p>Los costes exactos cambian con el tiempo y según el servidor/mods; aquí tienes una guía general:</p>
+            <ul>
+              <li><strong>Twig → Wood:</strong> poca cantidad de madera</li>
+              <li><strong>Wood → Stone:</strong> piedra (rock), tiempo moderado de farm</li>
+              <li><strong>Stone → Sheet Metal:</strong> metal fragments necesarios — considera un horno para fundir
+                metal
+              </li>
+              <li><strong>Sheet Metal → Armored:</strong> requiere high quality metal (HQM) — caro y valioso</li>
+            </ul>
+            <div class="tip">Nota: si juegas en servidores con economía o kits, los precios pueden variar — esta sección
+              es una guía conceptual.</div>
+          </section>
+
+          <section id="consejos-finales">
+            <h2>8. Consejos finales rápidos</h2>
+            <ul>
+              <li>No pongas el TC en paredes débiles o accesibles desde la azotea.</li>
+              <li>Usa <strong>honeycomb</strong> y <strong>compartimentalización</strong> para ralentizar el avance del
+                raider.</li>
+              <li>Protege las escotillas y techos: la mayoría de raids entran por arriba o por suelos débiles.</li>
+              <li>Invierte HQM solo en lo que realmente quieres proteger (vaults, rooms con loot).</li>
+            </ul>
+          </section>
+
+        </article>
+
+        <aside>
+          <h3>Atajos</h3>
+          <ul>
+            <li><strong>Primeras 30 min:</strong> TC + 1 puerta + cama</li>
+            <li><strong>Primeras 2 horas:</strong> Stone shell, 2 airlocks</li>
+            <li><strong>Late game:</strong> Sala blindada con Armored y TC interno</li>
+          </ul>
+          <h3>Recursos útiles</h3>
+          <p class="tip">¿Quieres que añada diagramas SVG o plantillas (2x2/3x3) en la página para imprimir o usar como
+            referencia rápida? Puedo generarlos aquí mismo.</p>
+        </aside>
+      </main>
+
+      <footer>
+        Página creada para explicar conceptos básicos y avanzados de construcción en Rust. Si quieres incluir imágenes,
+        diagramas paso a paso, o adaptar la guía a un modo de juego (vanilla, modded, wipe semanal), dime y lo ajusto.
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
