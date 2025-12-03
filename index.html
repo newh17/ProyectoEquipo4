@@ -30,15 +30,25 @@
             </div>
             
             <div class="contenedor-imagenes">
-                <div class="imagen-item">
-                    <img src="img/rifle-ak.avif" alt="Rifle AK">
-                </div>
-                <div class="imagen-item">
-                    <img src="img/thompson.avif" alt="Thompson">
-                </div>
-                <div class="imagen-item">
-                    <img src="img/rocket-launcher.avif" alt="Lanzacohetes">
-                </div>
+                <a href="html/armas.html" class="imagen-item carrusel-armas">
+                    <img src="img/armas/rifle-ak.avif" alt="Armas de Rust" class="activa">
+                    <img src="img/armas/thompson.avif" alt="Armas de Rust">
+                    <img src="img/armas/rifle-l96.avif" alt="Armas de Rust">
+                    <img src="img/armas/escopetacorredera.avif" alt="Armas de Rust">
+                    <div class="overlay-texto">
+                        <h3>Arsenal Completo</h3>
+                        <p>Descubre todas las armas</p>
+                    </div>
+                </a>
+                <a href="html/materiales.html" class="imagen-item carrusel-materiales">
+                    <img src="img/materiales/metal.avif" alt="Materiales de Rust" class="activa">
+                    <img src="img/materiales/madera.avif" alt="Materiales de Rust">
+                    <img src="img/materiales/piedra.avif" alt="Materiales de Rust">
+                    <div class="overlay-texto">
+                        <h3>Materiales Esenciales</h3>
+                        <p>Construye y sobrevive</p>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -56,5 +66,22 @@
     <footer class="pie">
         <p>Javi, Izan, Carles, Samuel, Álvaro</p>
     </footer>
+
+    <script>
+        function iniciarCarrusel(selector) {
+            const contenedor = document.querySelector(selector);
+            const imagenes = contenedor.querySelectorAll('img');
+            let indiceActual = 0;
+
+            setInterval(() => {
+                imagenes[indiceActual].classList.remove('activa');
+                indiceActual = (indiceActual + 1) % imagenes.length;
+                imagenes[indiceActual].classList.add('activa');
+            }, 3000);
+        }
+
+        iniciarCarrusel('.carrusel-armas');
+        iniciarCarrusel('.carrusel-materiales');
+    </script>
 </body>
 </html>
