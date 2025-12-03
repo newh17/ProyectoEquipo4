@@ -67,11 +67,33 @@
 
                 <button type="submit" class="boton-enviar">Enviar Valoración</button>
             </form>
+            <div id="mensaje-confirmacion" class="mensaje-confirmacion" style="display: none;">
+                <p>✓ ¡Valoración enviada correctamente! Gracias por tu opinión.</p>
+            </div>
         </section>
     </main>
 
     <footer class="pie">
         <p>Javi, Izan, Carles, Samuel, Álvaro</p>
     </footer>
+
+    <script>
+        document.querySelector('.formulario-valoracion').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ocultar formulario
+            this.style.display = 'none';
+            
+            // Mostrar mensaje de confirmación
+            document.getElementById('mensaje-confirmacion').style.display = 'block';
+            
+            // Opcional: Resetear el formulario después de 3 segundos
+            setTimeout(() => {
+                this.reset();
+                this.style.display = 'block';
+                document.getElementById('mensaje-confirmacion').style.display = 'none';
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
