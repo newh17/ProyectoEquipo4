@@ -6,7 +6,10 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
 
 .imagenes-objetos{
     display:flex;
@@ -25,6 +28,9 @@
     border:1px solid #444;
 }
 
+<<<<<<< HEAD
+>>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
+=======
 >>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
 .texto-seccion{
     margin-bottom:1.5rem;
@@ -207,7 +213,10 @@ body{
     font-size:.9rem;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
 
 
 /* ==============================
@@ -348,4 +357,7 @@ body{
     color: #ff6b35;
     transform: translateY(-2px);
 }
+<<<<<<< HEAD
+>>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
+=======
 >>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
