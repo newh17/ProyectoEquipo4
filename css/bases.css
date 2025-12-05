@@ -1,0 +1,239 @@
+/* =============================================================
+   RESET GENERAL
+   ============================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+                      repeating-linear-gradient(0deg, transparent, transparent 2px,
+                      rgba(50,50,50,.1) 2px, rgba(50,50,50,.1) 4px);
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+/* =============================================================
+   NAVEGACIÓN
+   ============================================================= */
+.barra-navegacion {
+    background: linear-gradient(180deg, #2d2d2d 0%, #1f1f1f 100%);
+    padding: 1rem 2rem;
+    border-bottom: 3px solid #8b4513;
+    box-shadow: 0 4px 10px rgba(0,0,0,.5);
+}
+
+.menu-navegacion {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-navegacion li a {
+    text-decoration: none;
+    color: #d4a574;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    border: 2px solid transparent;
+    transition: all .3s ease;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover */
+.menu-navegacion li a:hover {
+    color: #ff6b35;
+    border: 2px solid #8b4513;
+    background-color: rgba(139, 69, 19, .2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 107, 53, .4);
+}
+
+/* Subrayado animado */
+.menu-navegacion li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #ffb36b);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    opacity: 0.8;
+}
+
+.menu-navegacion li a:hover::after {
+    transform: translateX(0);
+}
+
+/* Enlace activo */
+.menu-navegacion li a.activo,
+.menu-navegacion li a.enlace {
+    color: #ff6b35;
+    border-bottom: 2px solid #ff6b35;
+}
+
+/* =============================================================
+   HEADER
+   ============================================================= */
+.header-principal {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #3d2817 0%, #1a1a1a 100%);
+    border-bottom: 4px solid #8b4513;
+}
+
+.contenedor-banner {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 2px solid #5a5a5a;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,.5);
+}
+
+.contenedor-banner img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, .3));
+}
+
+/* =============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================= */
+.main-principal {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 3rem;
+    text-align: center;
+    color: #ff6b35;
+    margin-bottom: 2rem;
+}
+
+.titulo2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: #d4a574;
+}
+
+.titulo3 {
+    font-size: 1.6rem;
+    color: #ff6b35;
+    margin-top: 1.5rem;
+}
+
+/* Imagen principal */
+.main-principal img {
+    display: block;
+    margin: 2rem auto;
+    width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255,107,53,.25);
+}
+
+/* Iframes (videos) */
+.video-contenedor,
+iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #5a5a5a;
+    box-shadow: 0 4px 12px rgba(0,0,0,.6);
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+.pie {
+    background: linear-gradient(180deg, #1f1f1f 0%, #2d2d2d 100%);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 3px solid #8b4513;
+}
+
+.pie p {
+    color: #8b8b8b;
+    font-size: .9rem;
+}
+
+/* =============================================================
+   TRANSICIONES
+   ============================================================= */
+.caja,
+.menu-navegacion li a,
+.main-principal h1 {
+    transition: transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease,
+                background .25s ease,
+                color .25s ease,
+                filter .25s ease;
+}
+
+/* =============================================================
+   SECCIÓN VALORACIÓN (solo si la usas)
+   ============================================================= */
+.seccion-valoracion {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #3d2817 0%, #1a1a1a 100%);
+    border: 2px solid #ff6b35;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.texto-valoracion {
+    font-size: 1.3rem;
+    color: #ff6b35;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.texto-descripcion {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.boton-valoracion {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #8b4513 0%, #6b3410 100%);
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .3s ease;
+    border: 2px solid #5a5a5a;
+}
+
+.boton-valoracion:hover {
+    background: linear-gradient(135deg, #a0521e 0%, #8b4513 100%);
+    border-color: #ff6b35;
+    box-shadow: 0 0 15px rgba(255,107,53,.5);
+    transform: translateY(-2px);
+}
