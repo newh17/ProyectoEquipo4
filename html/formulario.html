@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Valoración</title>
+    <link rel="stylesheet" href="../css/estiloformulario.css">
+</head>
+<body>
+    <nav class="barra-navegacion">
+        <ul class="menu-navegacion">
+            <li><a href="../index.html" class="enlace">Inicio</a></li>
+            <li><a href="../html/armas.html" class="enlace">Armas</a></li>
+            <li><a href="../html/ropa.html" class="enlace">Ropa</a></li>
+            <li><a href="../html/materiales.html" class="enlace">Materiales</a></li>
+        </ul>
+    </nav>
+
+    <header class="header-principal">
+        <div class="contenedor-banner">
+            <h1>Formulario de Valoración</h1>
+        </div>
+    </header>
+
+    <main class="main-principal">
+        <section class="seccion-formulario">
+            <form class="formulario-valoracion">
+                <div class="campo-formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Puntuación:</label>
+                    <div class="estrellas">
+                        <input type="radio" id="estrella5" name="puntuacion" value="5" required>
+                        <label for="estrella5" class="estrella">★</label>
+                        
+                        <input type="radio" id="estrella4" name="puntuacion" value="4">
+                        <label for="estrella4" class="estrella">★</label>
+                        
+                        <input type="radio" id="estrella3" name="puntuacion" value="3">
+                        <label for="estrella3" class="estrella">★</label>
+                        
+                        <input type="radio" id="estrella2" name="puntuacion" value="2">
+                        <label for="estrella2" class="estrella">★</label>
+                        
+                        <input type="radio" id="estrella1" name="puntuacion" value="1">
+                        <label for="estrella1" class="estrella">★</label>
+                    </div>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="comentario">Razona tu puntuación:</label>
+                    <textarea id="comentario" name="comentario" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">Enviar Valoración</button>
+            </form>
+            <div id="mensaje-confirmacion" class="mensaje-confirmacion" style="display: none;">
+                <p>✓ ¡Valoración enviada correctamente! Gracias por tu opinión.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Javi, Izan, Carles, Samuel, Álvaro</p>
+    </footer>
+
+    <script>
+        document.querySelector('.formulario-valoracion').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ocultar formulario
+            this.style.display = 'none';
+            
+            // Mostrar mensaje de confirmación
+            document.getElementById('mensaje-confirmacion').style.display = 'block';
+            
+            // Opcional: Resetear el formulario después de 3 segundos
+            setTimeout(() => {
+                this.reset();
+                this.style.display = 'block';
+                document.getElementById('mensaje-confirmacion').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

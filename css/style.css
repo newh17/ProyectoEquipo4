@@ -86,6 +86,121 @@ body{
     flex-wrap:wrap;
 }
 
+.seccion-contenido{
+    display:flex;
+    gap:2rem;
+    margin-bottom:3rem;
+    flex-wrap:wrap;
+    align-items:stretch;
+}
+
+.contenedor-video{
+    flex:1 1 60%;
+    min-width:300px;
+    background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);
+    border:2px solid #5a5a5a;
+    border-radius:8px;
+    padding:1rem;
+    box-shadow:0 4px 12px rgba(0,0,0,.6);
+}
+
+.contenedor-video video{
+    width:100%;
+    height:auto;
+    border-radius:6px;
+    box-shadow:0 0 15px rgba(255,107,53,.2);
+}
+
+.contenedor-imagenes{
+    flex:1 1 35%;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    min-width:250px;
+}
+
+.imagen-item{
+    background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);
+    border:2px solid #5a5a5a;
+    border-radius:8px;
+    padding:.8rem;
+    transition:all .3s ease;
+    box-shadow:0 4px 12px rgba(0,0,0,.6);
+    position:relative;
+    overflow:hidden;
+    flex:1;
+    display:block;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.imagen-item:hover{
+    border-color:#8b4513;
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 6px 20px rgba(139,69,19,.4);
+}
+
+.imagen-item img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:6px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:opacity .8s ease-in-out;
+    filter:drop-shadow(0 0 8px rgba(255,107,53,.2));
+}
+
+.imagen-item img.activa{
+    opacity:1;
+}
+
+.overlay-texto{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.9) 100%);
+    padding:1.5rem 1rem .8rem;
+    z-index:10;
+    transform:translateY(100%);
+    transition:transform .3s ease;
+}
+
+.imagen-item:hover .overlay-texto{
+    transform:translateY(0);
+}
+
+.overlay-texto h3{
+    color:#ff6b35;
+    font-size:1.2rem;
+    margin-bottom:.3rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.overlay-texto p{
+    color:#d4a574;
+    font-size:.9rem;
+}
+
+.seccion-texto{
+    background:linear-gradient(135deg,#2d2d2d 0%,#1a1a1a 100%);
+    border:2px solid #5a5a5a;
+    border-radius:8px;
+    padding:2rem;
+    box-shadow:0 4px 12px rgba(0,0,0,.6);
+}
+
+.seccion-texto p{
+    color:#d4a574;
+    font-size:1.1rem;
+    line-height:1.8;
+    text-align:center;
+}
+
 .pie{
     background:linear-gradient(180deg,#1f1f1f 0%,#2d2d2d 100%);
     text-align:center;
@@ -97,4 +212,95 @@ body{
 .pie p{
     color:#8b8b8b;
     font-size:.9rem;
+}
+
+
+
+/* ==============================
+          TRANSICIONES
+   =============================== */
+
+/* Transiciones generales en tarjetas*/
+.caja,
+.imagenes-objetos img,
+.menu-navegacion li a,
+.titulo-seccion,
+.main-principal h1 {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        color .25s ease,
+        filter .25s ease;
+}
+
+/* NAVBAR – subrayado y leve glow al pasar el ratón */
+.menu-navegacion li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-navegacion li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #ffb36b);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    opacity: 0.8;
+}
+
+.menu-navegacion li a:hover::after {
+    transform: translateX(0);
+}
+
+.menu-navegacion li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(255, 107, 53, .4);
+}
+
+/* La página activa un poco más marcada al pasar el ratón */
+.menu-navegacion li a.enlace:hover {
+    border-bottom-color: #ffb36b;
+}
+
+.seccion-valoracion{
+    margin-top:2rem;
+    background:linear-gradient(135deg,#3d2817 0%,#1a1a1a 100%);
+    border:2px solid #ff6b35;
+}
+
+.texto-valoracion{
+    font-size:1.3rem;
+    color:#ff6b35;
+    margin-bottom:1rem;
+}
+
+.texto-descripcion{
+    margin-bottom:1.5rem;
+}
+
+.boton-valoracion{
+    display:inline-block;
+    padding:1rem 2rem;
+    background:linear-gradient(135deg,#8b4513 0%,#6b3410 100%);
+    color:#e0e0e0;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    transition:all .3s ease;
+    border:2px solid #5a5a5a;
+}
+
+.boton-valoracion:hover{
+    background:linear-gradient(135deg,#a0521e 0%,#8b4513 100%);
+    border-color:#ff6b35;
+    box-shadow:0 0 15px rgba(255,107,53,.5);
+    transform:translateY(-2px);
 }
