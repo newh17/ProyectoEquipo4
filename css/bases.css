@@ -7,14 +7,19 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-                      repeating-linear-gradient(0deg, transparent, transparent 2px,
-                      rgba(50,50,50,.1) 2px, rgba(50,50,50,.1) 4px);
-    color: #e0e0e0;
-    min-height: 100vh;
+    color:#e0e0e0;
+    min-height:100vh;
+
+    /* Fondo: imagen muy borrosa y oscura */
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("../img/fondo.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
 }
 
 /* =============================================================
@@ -93,8 +98,17 @@ body {
     border-bottom: 4px solid #8b4513;
 }
 
-.contenedor-banner {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+.contenedor-banner img{
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255,107,53,.3));
+}
+
+.contenedor-banner{
+    position: relative;
     border: 2px solid #5a5a5a;
     border-radius: 8px;
     padding: 2rem;
@@ -105,13 +119,21 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: inset 0 4px 8px rgba(0,0,0,.5);
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../img/banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.contenedor-banner img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 107, 53, .3));
+.contenedor-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    z-index: 0;
 }
 
 /* =============================================================
