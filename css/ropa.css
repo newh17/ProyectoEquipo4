@@ -5,15 +5,6 @@
     text-transform:uppercase;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-
 .imagenes-objetos{
     display:flex;
     gap:.5rem;
@@ -31,13 +22,7 @@
     border:1px solid #444;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
+
 .texto-seccion{
     margin-bottom:1.5rem;
     color:#cfcfcf;
@@ -218,15 +203,6 @@ body{
     color:#8b8b8b;
     font-size:.9rem;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-
 
 /* ==============================
           TRANSICIONES
@@ -366,10 +342,4 @@ body{
     color: #ff6b35;
     transform: translateY(-2px);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
-=======
->>>>>>> cb1d0413b209fbd6880864bfefd446cc70d7c430
+
