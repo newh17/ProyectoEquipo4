@@ -116,11 +116,12 @@ body{
     box-shadow:0 4px 10px rgba(0,0,0,.5);
 }
 
-.menu-navegacion{
-    list-style:none;
-    display:flex;
-    gap:2rem;
-    flex-wrap:wrap;
+.menu-navegacion {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu-navegacion li a{
