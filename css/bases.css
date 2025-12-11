@@ -18,6 +18,57 @@ body{
     backdrop-filter: blur(10px);
 }
 
+.header-principal{
+    text-align:center;
+    padding:3rem 2rem;
+    background:linear-gradient(135deg,#3d2817 0%,#1a1a1a 100%);
+    border-bottom:4px solid #8b4513;
+}
+
+.contenedor-banner{
+    position: relative;
+    border: 2px solid #5a5a5a;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 8px rgba(0,0,0,.5);
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../img/banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.contenedor-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    z-index: 0;
+}
+
+.header-principal h1 {
+    position: relative;
+    z-index: 5;
+    filter: none !important;
+}
+
+.contenedor-banner h1{
+    font-size:3rem;
+    color:#ff6b35;
+    text-transform:uppercase;
+    text-shadow:2px 2px 4px rgba(0,0,0,.8);
+    letter-spacing:2px;
+}
+
+
 .barra-navegacion {
     background: linear-gradient(180deg, #2d2d2d 0%, #1f1f1f 100%);
     padding: 1rem 2rem;
@@ -78,11 +129,18 @@ body{
     border-bottom: 2px solid #ff6b35;
 }
 
-.header-principal {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #3d2817 0%, #1a1a1a 100%);
-    border-bottom: 4px solid #8b4513;
+.header-principal h1 {
+    position: relative;
+    z-index: 5;
+    filter: none !important;
+}
+
+.contenedor-banner h1{
+    font-size:3rem;
+    color:#ff6b35;
+    text-transform:uppercase;
+    text-shadow:2px 2px 4px rgba(0,0,0,.8);
+    letter-spacing:2px;
 }
 
 .contenedor-banner img{
