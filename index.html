@@ -58,9 +58,13 @@
             </div>
         </section>
 
-        <section class="seccion-texto">
-            <p>¿Sabías que en Rust los helipuertos del mapa no son decorativos, sino que están colocados siguiendo rutas reales de aparición del helicóptero patrulla, lo que permite a jugadores avanzados predecir por dónde volará?</p>
-        </section>
+<section class="seccion-texto" id="curiosidades">
+    <h2 class="titulo-curiosidades">Curiosidades de Rust</h2>
+    <br>
+    <p id="texto-curiosidad"></p>
+</section>
+
+
 
         <section class="seccion-texto seccion-valoracion">
             <p class="texto-valoracion">¿Qué te ha parecido nuestra guía de Rust?</p>
@@ -69,25 +73,52 @@
         </section>
     </main>
 
+
     <footer class="pie">
         <p>Javi, Izan, Carles, Samuel, Álvaro</p>
     </footer>
 
-    <script>
-        function iniciarCarrusel(selector) {
-            const contenedor = document.querySelector(selector);
-            const imagenes = contenedor.querySelectorAll('img');
-            let indiceActual = 0;
+<script>
+    function iniciarCarrusel(selector) {
+        const contenedor = document.querySelector(selector);
+        const imagenes = contenedor.querySelectorAll('img');
+        let indiceActual = 0;
 
-            setInterval(() => {
-                imagenes[indiceActual].classList.remove('activa');
-                indiceActual = (indiceActual + 1) % imagenes.length;
-                imagenes[indiceActual].classList.add('activa');
-            }, 3000);
-        }
+        setInterval(() => {
+            imagenes[indiceActual].classList.remove('activa');
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            imagenes[indiceActual].classList.add('activa');
+        }, 3000);
+    }
 
-        iniciarCarrusel('.carrusel-armas');
-        iniciarCarrusel('.carrusel-materiales');
-    </script>
+    iniciarCarrusel('.carrusel-armas');
+    iniciarCarrusel('.carrusel-materiales');
+
+    // =========================
+    //  CURIOSIDADES DE RUST
+    // =========================
+    const curiosidades = [
+        "En Rust, si disparas a una puerta de madera con flechas incendiarias, puedes destruirla mucho más rápido que con balas normales.",
+        "Los científicos de Rust llevan tarjetas keycard verdes, azules o rojas que son esenciales para acceder a monumentos de alto loot.",
+        "El helicóptero patrulla ataca a jugadores con demasiada protección metálica o armas visibles, incluso aunque no hayan disparado.",
+        "Los barriles del mar tienen más probabilidad de soltar componentes raros que los barriles normales de carretera.",
+        "Puedes apagar los helicópteros mini con un solo tiro al rotor trasero si lo impactas justo en el ángulo correcto."
+    ];
+
+    let indiceCuriosidad = 0;
+
+    function cambiarCuriosidad() {
+        const p = document.getElementById("texto-curiosidad");
+        if (!p) return;
+        p.textContent = curiosidades[indiceCuriosidad];
+        indiceCuriosidad = (indiceCuriosidad + 1) % curiosidades.length;
+    }
+
+    // Primera curiosidad al cargar
+    cambiarCuriosidad();
+    // Cambiar cada 5 segundos
+    setInterval(cambiarCuriosidad, 5000);
+</script>
+
 </body>
 </html>

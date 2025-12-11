@@ -81,6 +81,16 @@ body{
     overflow: hidden;
 }
 
+.titulo-curiosidades{
+    font-size:1.6rem;
+    color:#ff6b35;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:1rem;
+    text-align:center;
+}
+
+
 .contenedor-banner::before{
     content: "";
     position: absolute;
