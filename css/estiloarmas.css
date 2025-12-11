@@ -99,6 +99,11 @@ body{
 }
 
 
+.header-principal h1 {
+    position: relative;
+    z-index: 5;
+    filter: none !important;
+}
 
 .contenedor-banner h1{
     font-size:3rem;

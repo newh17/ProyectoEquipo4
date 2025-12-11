@@ -89,6 +89,18 @@ body{
     z-index: 0;
 }
 
+.header-principal h1 {
+    position: relative;
+    z-index: 5;
+    filter: none !important;
+}
+.contenedor-banner h1{
+    font-size:3rem;
+    color:#ff6b35;
+    text-transform:uppercase;
+    text-shadow:2px 2px 4px rgba(0,0,0,.8);
+    letter-spacing:2px;
+}
 .contenedor-banner img{
     position: relative;
     z-index: 1;
